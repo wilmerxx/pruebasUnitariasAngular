@@ -32,4 +32,22 @@ describe('AppComponent', () => {
     const compiled = fixture.nativeElement as HTMLElement;
     expect(compiled.querySelector('.content span')?.textContent).toContain('pruebaUnitaria app is running!');
   });
+
+  it('should render label check', ()=>{
+    const fixture = TestBed.createComponent(AppComponent);
+    fixture.detectChanges();
+    const compiled = fixture.nativeElement as HTMLElement;
+    expect(compiled.querySelector('.etiqueta')?.textContent).toContain('checkbox');
+    
+
+  });
+
+  it('should render input check', ()=>{
+    const fixture = TestBed.createComponent(AppComponent);
+    fixture.detectChanges();
+    const checkbox:HTMLInputElement = fixture.nativeElement.querySelector('.checkbox2');
+    expect(checkbox.checked).toBeTruthy;
+    
+
+  });
 });
